@@ -26,3 +26,7 @@ test('supports custom single-character delimiter', () => {
 test('throws error with all negatives listed', () => {
   expect(() => add('1,-2,3,-4')).toThrow('Negatives numbers not allowed: -2, -4');
 });
+
+test('supports multiple delimiters of arbitrary length', () => {
+  expect(add('//[***][%%]\n1***2%%3')).toBe(6);
+});
