@@ -6,6 +6,7 @@
     "test": "jest --runInBand"
   },
   "keywords": [],
+  "type": "module",
   "author": "",
   "license": "ISC",
   "description": "",
