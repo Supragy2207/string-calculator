@@ -1,6 +1,10 @@
 export function add(numbers: string): number {
-  if (numbers === "") return 0; // empty string returning 0
+  // empty string returning 0
+  if (numbers === "") return 0;
 
-  const num = Number(numbers);
-  return isNaN(num) ? 0 : num; //single number returns same number
+  //single number returns same number
+  if (!numbers.includes(",")) return Number(numbers);
+
+  const parts = numbers.split(",");
+  return parts.map(Number).reduce((a, b) => a + b, 0);
 }
