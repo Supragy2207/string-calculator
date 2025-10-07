@@ -3,8 +3,8 @@ export function add(numbers: string): number {
   if (numbers === "") return 0;
 
   //single number returns same number
-  if (!numbers.includes(",")) return Number(numbers);
-
-  const parts = numbers.split(",");
-  return parts.map(Number).reduce((a, b) => a + b, 0);
+  // handled comma separated 2 numbers
+  // handled newlines as delimiters too
+  const tokens = numbers.split(/,|\n/);
+  return tokens.map(Number).reduce((a, b) => a + b, 0);
 }
