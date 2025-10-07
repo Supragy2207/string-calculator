@@ -20,3 +20,7 @@ test('supports custom single-character delimiter', () => {
   expect(add('//;\n1;2')).toBe(3);
 });
 
+test('throws error with all negatives listed', () => {
+  expect(() => add('1,-2,3,-4')).toThrow('Negatives not allowed: -2, -4');
+});
+
